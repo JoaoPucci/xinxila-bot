@@ -5,6 +5,7 @@ import dev.kord.gateway.Intent
 import dev.kord.gateway.PrivilegedIntent
 
 private const val XINXILA_DISCORD_BOT_TOKEN = "XINXILA_DISCORD_BOT_TOKEN"
+
 suspend fun main() {
 
     val kord = Kord(System.getenv(XINXILA_DISCORD_BOT_TOKEN))
