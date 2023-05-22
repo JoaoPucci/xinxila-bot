@@ -10,6 +10,8 @@ repositories {
 }
 
 dependencies {
+    implementation("dev.kord:kord-core:0.9.0")
+
     testImplementation(kotlin("test"))
 }
 
