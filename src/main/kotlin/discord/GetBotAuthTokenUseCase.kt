@@ -1,4 +1,6 @@
 package discord
 
-class GetBotAuthTokenUseCase {
+interface GetBotAuthTokenUseCase {
+
+    val token: String
 }

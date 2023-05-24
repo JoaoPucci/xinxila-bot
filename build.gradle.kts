@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation("dev.kord:kord-core:0.9.0")
+    implementation("io.insert-koin:koin-core:3.4.0")
 
     testImplementation(kotlin("test"))
 }

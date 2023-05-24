@@ -1,19 +1,22 @@
 package eventhandler
 
 import command.Command
-import command.PingCommand
-import command.WaifuCommand
+import command.ping.PingCommand
+import command.waifu.WaifuCommand
 import dev.kord.core.event.message.MessageCreateEvent
 
-class MessageCreateEventHandler : EventHandler<MessageCreateEvent> {
+class MessageCreateEventHandler(
+    pingCommand: PingCommand,
+    waifuCommand: WaifuCommand
+) : EventHandler<MessageCreateEvent> {
 
     companion object {
         private const val EXCLAMATION_MARK = "!"
     }
 
     private val commands: Map<String, Command> = mapOf(
-        PingCommand.COMMAND_MAP,
-        WaifuCommand.COMMAND_MAP
+        pingCommand.commandMap,
+        waifuCommand.commandMap
     )
 
     override suspend fun handle(event: MessageCreateEvent) {
