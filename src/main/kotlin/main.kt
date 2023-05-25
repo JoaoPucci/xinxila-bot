@@ -1,23 +1,16 @@
-import dev.kord.core.Kord
-import dev.kord.core.event.message.MessageCreateEvent
-import dev.kord.core.on
-import dev.kord.gateway.Intent
-import dev.kord.gateway.PrivilegedIntent
-
-private const val XINXILA_DISCORD_BOT_TOKEN = "XINXILA_DISCORD_BOT_TOKEN"
+import command.module.commandModule
+import discord.bot.DiscordBot
+import discord.module.discordModule
+import eventhandler.module.eventHandlerModule
+import org.koin.core.context.GlobalContext
+import org.koin.core.context.startKoin
 
 suspend fun main() {
 
-    val kord = Kord(System.getenv(XINXILA_DISCORD_BOT_TOKEN))
-
-    // Simplified style
-    kord.on<MessageCreateEvent> {
-        if (message.author?.isBot == true) return@on
-        if (message.content == "!ping") message.channel.createMessage("pong")
+    startKoin {
+        modules(listOf(networkModule, commandModule, eventHandlerModule, discordModule))
     }
 
-    kord.login {
-        @OptIn(PrivilegedIntent::class)
-        intents += Intent.MessageContent
-    }
+    val discordBot: DiscordBot = GlobalContext.get().get()
+    discordBot.initialize()
 }
