@@ -8,7 +8,14 @@ import org.koin.core.context.startKoin
 suspend fun main() {
 
     startKoin {
-        modules(listOf(networkModule, commandModule, eventHandlerModule, discordModule))
+        modules(
+            listOf(
+                networkModule,
+                commandModule,
+                eventHandlerModule,
+                discordModule
+            )
+        )
     }
 
     val discordBot: DiscordBot = GlobalContext.get().get()
