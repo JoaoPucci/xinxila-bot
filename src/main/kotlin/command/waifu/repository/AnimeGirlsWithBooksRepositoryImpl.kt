@@ -7,7 +7,7 @@ import io.ktor.http.contentType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import network.exception.NetworkErrorException
-import network.module.exception.FileExtensionNotProvidedException
+import network.exception.FileExtensionNotProvidedException
 
 class AnimeGirlsWithBooksRepositoryImpl(
     private val animeGirlsWithBooksApi: AnimeGirlsWithBooksApi

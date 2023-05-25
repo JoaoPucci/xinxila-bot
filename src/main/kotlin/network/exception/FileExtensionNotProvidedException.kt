@@ -1,6 +1,4 @@
-package network.module.exception
-
-import network.exception.NetworkErrorException
+package network.exception
 
 class FileExtensionNotProvidedException : NetworkErrorException(RuntimeException()) {
 
