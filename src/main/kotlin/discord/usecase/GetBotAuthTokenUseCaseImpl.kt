@@ -1,4 +1,4 @@
-package discord
+package discord.usecase
 
 class GetBotAuthTokenUseCaseImpl : GetBotAuthTokenUseCase {
 

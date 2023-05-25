@@ -1,4 +1,4 @@
-package discord
+package discord.bot
 
 import dev.kord.core.Kord
 import dev.kord.core.event.Event

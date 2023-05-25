@@ -1,16 +1,17 @@
 package command.waifu
 
 import command.Command
-import command.waifu.repository.AnimeGirlHoldingProgrammingBooksRepository
+import command.waifu.repository.AnimeGirlsWithBooksRepository
 import dev.kord.core.behavior.channel.createMessage
 import dev.kord.core.entity.Message
 import io.ktor.client.request.forms.ChannelProvider
+import network.exception.NetworkErrorException
 
-class WaifuCommand(private val repository: AnimeGirlHoldingProgrammingBooksRepository) : Command {
+class WaifuCommand(private val repository: AnimeGirlsWithBooksRepository) : Command {
 
     companion object {
         private const val COMMAND = "!waifu"
-        private const val FILE_NAME = "waifu"
+        private const val FILE_NAME = "waifu."
     }
 
     override val commandMap: Pair<String, Command>
@@ -21,13 +22,16 @@ class WaifuCommand(private val repository: AnimeGirlHoldingProgrammingBooksRepos
     }
 
     private suspend fun makeRequest(message: Message) {
-        repository.fetchRandomWaifu().collect {
-            val contentProvider = ChannelProvider {
-                it.second
-            }
+        repository.fetchRandomWaifu().collect { result ->
+            result.onSuccess {
+                val contentProvider = ChannelProvider { it.image }
 
-            message.channel.createMessage {
-                addFile(FILE_NAME + it.first, contentProvider)
+                message.channel.createMessage {
+                    addFile(FILE_NAME + it.fileExtension, contentProvider)
+                }
+            }.onFailure {
+                val error = it as NetworkErrorException
+                message.channel.createMessage(error.errorImageUrl)
             }
         }
     }

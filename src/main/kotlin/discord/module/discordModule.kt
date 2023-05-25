@@ -1,9 +1,9 @@
 package discord.module
 
 import dev.kord.core.Kord
-import discord.DiscordBot
-import discord.DiscordBotImpl
-import discord.GetBotAuthTokenUseCaseImpl
+import discord.bot.DiscordBot
+import discord.bot.DiscordBotImpl
+import discord.usecase.GetBotAuthTokenUseCaseImpl
 import kotlinx.coroutines.runBlocking
 import org.koin.dsl.module
 
