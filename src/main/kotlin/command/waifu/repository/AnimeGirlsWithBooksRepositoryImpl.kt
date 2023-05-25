@@ -17,9 +17,9 @@ class AnimeGirlsWithBooksRepositoryImpl(
         try {
             val response = animeGirlsWithBooksApi.getRandomWaifu()
             val fileExtension = response.contentType()?.contentSubtype ?: throw FileExtensionNotProvidedException()
-            val animeGirl = AnimeGirlsWithBookResponse(fileExtension, response.bodyAsChannel())
+            val animeGirlResponse = AnimeGirlsWithBookResponse(fileExtension, response.bodyAsChannel())
 
-            emit(Result.success(animeGirl))
+            emit(Result.success(animeGirlResponse))
         } catch (e: FileExtensionNotProvidedException) {
             emit(Result.failure(e))
         } catch (e: Exception) {
