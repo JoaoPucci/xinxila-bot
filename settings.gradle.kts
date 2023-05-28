@@ -1,7 +1,10 @@
-
 rootProject.name = "xinxila-bot"
-include("network")
-include("bot")
-include("eventhandler")
-include("command")
-include("common")
+include(
+    listOf(
+        "bot",
+        "command",
+        "common",
+        "eventhandler",
+        "network"
+    )
+)
