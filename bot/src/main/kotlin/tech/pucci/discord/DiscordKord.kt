@@ -12,6 +12,7 @@ class DiscordKord(
     private val kord: Kord,
     private val messageCreateEventHandler: MessageCreateEventHandler
 ) : DiscordApi {
+
     override suspend fun setupEventListener() {
         kord.on<Event> {
             when (this) {

@@ -1,7 +1,7 @@
-package command.ping
+package tech.pucci.ping
 
-import tech.pucci.Command
 import dev.kord.core.entity.Message
+import tech.pucci.Command
 
 class PingCommand : Command {
 

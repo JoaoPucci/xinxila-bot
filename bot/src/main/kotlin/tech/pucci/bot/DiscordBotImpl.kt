@@ -5,7 +5,9 @@ import tech.pucci.discord.DiscordApi
 class DiscordBotImpl(private val discord: DiscordApi) : DiscordBot {
 
     override suspend fun initialize() {
-        discord.setupEventListener()
-        discord.connect()
+        discord.run {
+            setupEventListener()
+            connect()
+        }
     }
 }

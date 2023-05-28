@@ -1,4 +1,4 @@
-import command.module.commandModule
+import tech.pucci.module.commandModule
 import tech.pucci.module.eventHandlerModule
 import tech.pucci.module.networkModule
 import org.koin.core.context.GlobalContext

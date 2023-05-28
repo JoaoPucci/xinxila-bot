@@ -1,7 +1,7 @@
 package tech.pucci
 
-import command.ping.PingCommand
 import dev.kord.core.event.message.MessageCreateEvent
+import tech.pucci.ping.PingCommand
 import tech.pucci.waifu.WaifuCommand
 
 class MessageCreateEventHandler(

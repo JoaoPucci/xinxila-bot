@@ -1,12 +1,12 @@
-package command.module
+package tech.pucci.module
 
-import command.ping.PingCommand
+import tech.pucci.ping.PingCommand
 import org.koin.dsl.module
 import tech.pucci.waifu.WaifuCommand
-import tech.pucci.waifu.api.AnimeGirlsWithBooksClient
-import tech.pucci.waifu.api.AnimeGirlsWithBooksClientImpl
-import tech.pucci.waifu.repository.AnimeGirlsWithBooksRepository
-import tech.pucci.waifu.repository.AnimeGirlsWithBooksRepositoryImpl
+import tech.pucci.waifu.network.client.AnimeGirlsWithBooksClient
+import tech.pucci.waifu.network.client.AnimeGirlsWithBooksClientImpl
+import tech.pucci.waifu.network.repository.AnimeGirlsWithBooksRepository
+import tech.pucci.waifu.network.repository.AnimeGirlsWithBooksRepositoryImpl
 
 val commandModule = module {
     factory { PingCommand() }

@@ -1,4 +1,4 @@
-package tech.pucci.waifu.repository
+package tech.pucci.waifu.network.repository
 
 import kotlinx.coroutines.flow.Flow
 import tech.pucci.waifu.model.AnimeGirlsWithBookResponse

@@ -1,4 +1,4 @@
-package tech.pucci.waifu.repository
+package tech.pucci.waifu.network.repository
 
 import io.ktor.client.statement.bodyAsChannel
 import io.ktor.http.contentType
@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import tech.pucci.exception.FileExtensionNotProvidedException
 import tech.pucci.exception.NetworkErrorException
-import tech.pucci.waifu.api.AnimeGirlsWithBooksClient
 import tech.pucci.waifu.model.AnimeGirlsWithBookResponse
+import tech.pucci.waifu.network.client.AnimeGirlsWithBooksClient
 
 class AnimeGirlsWithBooksRepositoryImpl(
     private val client: AnimeGirlsWithBooksClient

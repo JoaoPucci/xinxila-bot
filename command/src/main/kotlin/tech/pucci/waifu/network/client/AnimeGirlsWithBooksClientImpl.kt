@@ -1,4 +1,4 @@
-package tech.pucci.waifu.api
+package tech.pucci.waifu.network.client
 
 import tech.pucci.client.GenericHttpClient
 

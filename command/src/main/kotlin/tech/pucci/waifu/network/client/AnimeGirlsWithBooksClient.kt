@@ -1,4 +1,4 @@
-package tech.pucci.waifu.api
+package tech.pucci.waifu.network.client
 
 import io.ktor.client.statement.HttpResponse
 

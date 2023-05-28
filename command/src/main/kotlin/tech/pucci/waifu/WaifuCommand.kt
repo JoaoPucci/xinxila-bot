@@ -5,7 +5,7 @@ import dev.kord.core.entity.Message
 import io.ktor.client.request.forms.ChannelProvider
 import tech.pucci.Command
 import tech.pucci.exception.NetworkErrorException
-import tech.pucci.waifu.repository.AnimeGirlsWithBooksRepository
+import tech.pucci.waifu.network.repository.AnimeGirlsWithBooksRepository
 
 class WaifuCommand(private val repository: AnimeGirlsWithBooksRepository) : Command {
 
