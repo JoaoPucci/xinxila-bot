@@ -6,24 +6,22 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import tech.pucci.exception.FileExtensionNotProvidedException
 import tech.pucci.exception.NetworkErrorException
-import tech.pucci.waifu.api.AnimeGirlsWithBooksApi
+import tech.pucci.waifu.api.AnimeGirlsWithBooksClient
 import tech.pucci.waifu.model.AnimeGirlsWithBookResponse
 
 class AnimeGirlsWithBooksRepositoryImpl(
-    private val animeGirlsWithBooksApi: AnimeGirlsWithBooksApi
+    private val client: AnimeGirlsWithBooksClient
 ) : AnimeGirlsWithBooksRepository {
 
     override suspend fun fetchRandomWaifu(): Flow<Result<AnimeGirlsWithBookResponse>> = flow {
         try {
-            val response = animeGirlsWithBooksApi.getRandomWaifu()
+            val response = client.getRandomWaifu()
             val fileExtension = response.contentType()?.contentSubtype ?: throw FileExtensionNotProvidedException()
             val animeGirlResponse = AnimeGirlsWithBookResponse(fileExtension, response.bodyAsChannel())
 
             emit(Result.success(animeGirlResponse))
-        } catch (e: FileExtensionNotProvidedException) {
+        } catch (e: NetworkErrorException) {
             emit(Result.failure(e))
-        } catch (e: Exception) {
-            emit(Result.failure(NetworkErrorException(e)))
         }
     }
 }

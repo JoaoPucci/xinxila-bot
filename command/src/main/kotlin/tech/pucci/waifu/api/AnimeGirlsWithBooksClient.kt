@@ -2,7 +2,7 @@ package tech.pucci.waifu.api
 
 import io.ktor.client.statement.HttpResponse
 
-interface AnimeGirlsWithBooksApi {
+interface AnimeGirlsWithBooksClient {
 
     suspend fun getRandomWaifu(): HttpResponse
 }
