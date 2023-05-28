@@ -2,6 +2,7 @@ import command.module.commandModule
 import discord.bot.DiscordBot
 import discord.module.discordModule
 import eventhandler.module.eventHandlerModule
+import network.module.networkModule
 import org.koin.core.context.GlobalContext
 import org.koin.core.context.startKoin
 
