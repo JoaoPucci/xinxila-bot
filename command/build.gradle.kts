@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":common"))
     implementation(project(":network"))
 
     implementation("io.insert-koin:koin-core:3.4.0")

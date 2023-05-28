@@ -12,6 +12,8 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":common"))
+    
     implementation("io.insert-koin:koin-core:3.4.0")
     implementation("io.ktor:ktor-client-core:$ktor_version")
     implementation("io.ktor:ktor-client-cio:$ktor_version")
