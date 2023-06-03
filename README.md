@@ -18,7 +18,7 @@ New commands will be added from time to time, feel free to contribute with anyth
 ```!ping```: returns the word "pong" to check if the bot is working correctly.
 
 ### Waifu 🕹️
-```!waifu```: returns an [anime girl holding a programming book](https://github.com/feijoes/AnimeGirls-with-Books-API).
+```!waifu```: returns a random [anime girl holding a programming book](https://github.com/feijoes/AnimeGirls-with-Books-API).
 Check the API documentation to test it, it looks like it isn't hosted anywhere yet :(
 
 I plan to publish the bot once it gets any useful function (or many useless ones, which is preferred)..
